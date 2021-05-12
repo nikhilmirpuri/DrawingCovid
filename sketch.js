@@ -17,13 +17,12 @@ function setup() {
   title = text("Draw A Lockdown Memory!", 30, 50);
   textFont(Archivo, 15);
   title = text("Instructions:", 30, 80);
-  title = text("1. Use the colour-picker above to choose a colour", 30, 100);
+  title = text("1. Use the colour-picker above to choose your colours", 30, 100);
   title = text("2. Use the right arrow key to increase the pen size", 30, 120);
   title = text("3. Use the left arrow key to decrease the pen size", 30, 140);
   title = text("4. Click & hold to draw", 30, 160);
-  title = text("5. Upload your drawing", 30, 180);
+  title = text("5. Download your drawing and email it to us below!", 30, 180);
   title = text("6. Smile!", 30, 200);
-  title = text("7. Press C to clear the canvas", 30, 220);
   color_picker = createColorPicker("green");
   color_picker.size(windowWidth - 400, 30);
   color_picker.parent("picker");
@@ -33,12 +32,6 @@ function draw() {
   stroke(color_picker.color());
   if (mouseIsPressed) {
     line(mouseX, mouseY, pmouseX, pmouseY);
-  }
-}
-
-function keyTyped() {
-  if (key == "c") {
-    background(255);
   }
 }
 
