@@ -1,5 +1,6 @@
 let penSize = 1;
 let penState = 0;
+var color_picker;
 
 let Archivo;
 function preload() {
@@ -9,34 +10,29 @@ function preload() {
 }
 
 function setup() {
-  let cnv = createCanvas(1200, 600);
+  var cnv = createCanvas(windowWidth - 300, windowHeight - 300);
   cnv.parent("tool");
   background(255);
   textFont(Archivo, 40);
   title = text("Question goes here!", 30, 50);
   textFont(Archivo, 15);
   title = text("Instructions:", 30, 80);
-  title = text("1. Use the Slider on the Left to Pick a Colour", 30, 100);
-  title = text("2. Click & Hold to Draw", 30, 120);
-  title = text("3. Upload your Drawing", 30, 140);
-  title = text("4. Smile!", 30, 160);
-  title = text("5. Press C to Clear the Canvas", 30, 180);
+  title = text("1. Use the colour-picker above to choose a colour", 30, 100);
+  title = text("2. Use the right arrow key to increase the pen size", 30, 120);
+  title = text("3. Use the left arrow key to decrease the pen size", 30, 140);
+  title = text("4. Click & hold to draw", 30, 160);
+  title = text("5. Upload your drawing", 30, 180);
+  title = text("6. Smile!", 30, 200);
+  title = text("7. Press C to clear the canvas", 30, 220);
+  color_picker = createColorPicker("green");
+  color_picker.size(windowWidth - 300, 30);
+  color_picker.parent("picker");
 }
 
 function draw() {
+  stroke(color_picker.color());
   if (mouseIsPressed) {
-    if (penState == 0) {
-      line(mouseX, mouseY, pmouseX, pmouseY);
-    }
-
-    if (penState == 1) {
-      ellipse(mouseX, mouseY, 10, 10);
-    }
-
-    if (penState == 2) {
-      line(mouseX - 5, mouseY - 5, mouseX + 5, mouseY + 5);
-      line(mouseX + 5, mouseY - 5, mouseX - 5, mouseY + 5);
-    }
+    line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
 
@@ -48,11 +44,11 @@ function keyTyped() {
 
 function keyPressed() {
   if (keyCode == LEFT_ARROW && penSize > 1) {
-    penSize -= 1;
+    penSize -= 5;
   }
 
   if (keyCode == RIGHT_ARROW) {
-    penSize += 1;
+    penSize += 5;
   }
 
   strokeWeight(penSize);
@@ -61,3 +57,11 @@ function keyPressed() {
 function saveImage() {
   save("mycovid" + ".jpg");
 }
+
+window.onresize = function () {
+  var w = windowWidth;
+  var h = windowHeight;
+  canvas.size(w, h);
+  width = w;
+  height = h;
+};

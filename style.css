@@ -46,6 +46,7 @@ footer {
   margin: 0;
   padding: 0;
   z-index: 100;
+  pointer-events: none;
 }
 
 footer {
@@ -56,24 +57,28 @@ h1 {
   font-family: "Karrik", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 3em;
+  pointer-events: none;
 }
 
 h2 {
   font-family: "Karrik", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 2.5em;
+  pointer-events: all;
 }
 
 h3 {
   font-family: "Archivo", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 2em;
+  pointer-events: all;
 }
 
 p {
   font-family: "Archivo", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 1em;
+  pointer-events: all;
 }
 
 .menu {
@@ -84,6 +89,7 @@ p {
   font-size: 2em;
   padding-left: 1em;
   padding-right: 1em;
+  pointer-events: all;
 }
 
 .menu:hover {
@@ -95,6 +101,7 @@ p {
   font-family: "Archivo", Arial, Helvetica, sans-serif;
   font-weight: 100;
   text-decoration: none;
+  pointer-events: all;
 }
 
 .credits:hover {
@@ -116,6 +123,30 @@ canvas {
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+
+#picker {
+  height: max-content;
+  width: calc(100% - 30vw);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#tool {
+  height: calc(100% - 30vh);
+  width: calc(100% - 30vw);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .archive {
