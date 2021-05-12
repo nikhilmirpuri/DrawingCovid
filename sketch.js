@@ -14,7 +14,7 @@ function setup() {
   cnv.parent("tool");
   background(255);
   textFont(Archivo, 40);
-  title = text("Question goes here!", 30, 50);
+  title = text("Draw A Lockdown Memory!", 30, 50);
   textFont(Archivo, 15);
   title = text("Instructions:", 30, 80);
   title = text("1. Use the colour-picker above to choose a colour", 30, 100);
