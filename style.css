@@ -55,6 +55,7 @@ h1 {
   font-weight: 100;
   font-size: 3em;
   pointer-events: none;
+  line-height:0;
 }
 
 h2 {
