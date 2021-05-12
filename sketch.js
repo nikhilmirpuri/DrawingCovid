@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup() {
-  var cnv = createCanvas(windowWidth - 300, windowHeight - 300);
+  var cnv = createCanvas(windowWidth - 400, windowHeight - 300);
   cnv.parent("tool");
   background(255);
   textFont(Archivo, 40);
@@ -25,7 +25,7 @@ function setup() {
   title = text("6. Smile!", 30, 200);
   title = text("7. Press C to clear the canvas", 30, 220);
   color_picker = createColorPicker("green");
-  color_picker.size(windowWidth - 300, 30);
+  color_picker.size(windowWidth - 400, 30);
   color_picker.parent("picker");
 }
 

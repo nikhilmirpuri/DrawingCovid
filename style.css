@@ -2,17 +2,14 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
   height: auto;
-  width: calc(100% - 20px);
+  width: 100vw;
   background-color: rgb(236, 236, 236);
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
   font-size: 14px;
 }
 
@@ -41,7 +38,7 @@ header,
 footer {
   position: fixed;
   text-align: center;
-  width: calc(100% - 20px);
+  width: 100vw;
   color: #000;
   margin: 0;
   padding: 0;
@@ -114,7 +111,7 @@ canvas {
 
 .container {
   position: relative;
-  width: calc(100% - 20px);
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -122,12 +119,12 @@ canvas {
   flex-direction: column;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  border: 0;
 }
 
 #picker {
   height: max-content;
-  width: calc(100% - 30vw);
+  width: 100vw;
   padding: 0;
   margin: 0;
   position: relative;
@@ -135,23 +132,23 @@ canvas {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: 0;
 }
 
 #tool {
-  height: calc(100% - 30vh);
-  width: calc(100% - 30vw);
-  padding: 0;
-  margin: 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 .archive {
   position: relative;
-  width: calc(100% - 20px);
+  width: 100vw;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -183,16 +180,6 @@ canvas {
 img {
   width: 13vw;
   border: 1px solid black;
-}
-
-#category {
-  font-size: 100px;
-  font-family: sans-serif;
-  font-weight: 200;
-  display: inline-block;
-  position: fixed;
-  margin-top: 130px;
-  margin-left: 40px;
 }
 
 button {
